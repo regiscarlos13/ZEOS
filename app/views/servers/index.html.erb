@@ -1,0 +1,11 @@
+<% @card_title = "Relação de " + @servers.model_name.human(count: 2) %>
+<% @btn_new = btn_new(new_server_path) %>
+
+<div class="table-responsive">
+    <%= table_for(@servers) do %>
+    <% field_table(@servers.model.human_attribute_name('matricula'))  { |f| format_matricula(f.matricula) } %>
+    <% field_table(@servers.model.human_attribute_name('name'))  { |f| link_to f.name, f } %>
+    <% field_table(@servers.model.human_attribute_name('cargo'))  { |f| f.cargo } %>
+    <% btn_form %>
+    <% end %>
+</div>

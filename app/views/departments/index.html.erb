@@ -1,0 +1,13 @@
+<% @card_title = "Relação de " + @departments.model_name.human(count: 2) %>
+<% @btn_new = btn_new(new_department_path) %>
+
+<div class="table-responsive">
+	<%= table_for(@departments) do %>
+		<% field_table(@departments.model.human_attribute_name('AIS'))  { |f| f.ais } %>
+		<% field_table(@departments.model.human_attribute_name('sigla'))  { |f| f.sigla } %>
+		<% field_table(@departments.model.human_attribute_name('name'))  { |f| f.name } %>
+		<% field_table(@departments.model.human_attribute_name('tipo'))  { |f| f.tipo } %>
+		<% field_table(@departments.model.human_attribute_name('localidade'))  { |f| f.localidade } %>
+		<% btn_form %>
+	<% end %>
+</div>

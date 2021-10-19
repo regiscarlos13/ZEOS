@@ -1,0 +1,23 @@
+{
+  "name": "zeos",
+  "private": true,
+  "dependencies": {
+    "@hotwired/turbo-rails": "^7.0.0-beta.5",
+    "@popperjs/core": "^2.5.4",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.2.1",
+    "bootstrap": "5.0.0-beta3",
+    "bootstrap-icons": "^1.4.1",
+    "datatables.net-bs4": "^1.10.24",
+    "jquery": "^3.6.0",
+    "select2": "^4.1.0-rc.0",
+    "stimulus": "^2.0.0",
+    "toastify-js": "^1.10.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
+}

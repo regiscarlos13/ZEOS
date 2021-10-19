@@ -1,0 +1,12 @@
+<% @card_title = "Relação de " + @departments.model_name.human(count: 2) %>
+
+<div class="table-responsive">
+	<%= table_for(@departments) do %>
+		<% field_table(@departments.model.human_attribute_name('sigla'))  { |f| f.sigla } %>
+		<% field_table(@departments.model.human_attribute_name('name'))  { |f| link_to f.name, vincular_servidor_path(f.id) } %>
+		<% field_table(@departments.model.human_attribute_name('tipo'))  { |f| f.tipo } %>
+		<% field_table(@departments.model.human_attribute_name('localidade'))  { |f| f.localidade } %>
+        <% field_table('')  { |f| link_to 'Vincular', vincular_servidor_path(f), class: 'btn btn-outline-success btn-sm', title: 'Vincular Servidor' }   %>
+    <% end %>
+    
+</div>

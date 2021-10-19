@@ -1,0 +1,34 @@
+<% @card_title = "Registro de " + @server.model_name.human(count: 1) %>
+<p>
+    <strong><%= translate 'activerecord.attributes.server.matricula' %>:</strong>
+    <%= format_matricula(@server.matricula) %>
+</p>
+<p>
+    <strong><%= translate 'activerecord.attributes.server.name' %>:</strong>
+    <%= @server.name %>
+</p>
+<p>
+    <strong><%= translate 'activerecord.attributes.server.cpf' %>:</strong>
+    <%= format_cpf(@server.cpf) %>
+</p>
+<p>
+    <strong><%= translate 'activerecord.attributes.server.email' %>:</strong>
+    <%= @server.email %>
+</p>
+
+<hr>
+
+
+<div class="table-responsive">
+	<%= table_for(@server.vinculars) do %>
+		<% field_table('Delegacia')  { |f| f.department.name } %>
+		<% field_table('Entrada')  { |f| f.entrada } %>
+		<% field_table('tipo')  { |f| f.tipoentrada } %>
+		<% field_table('Saída')  { |f| f.saida } %>
+        <% field_table('Entrada')  { |f| f.tiposaida } %>
+    <% end %>
+    
+</div>
+<hr>
+<%= btn_edit(edit_server_path(@server)) %> |
+<%= btn_back(servers_path) %>

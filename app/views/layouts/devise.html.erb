@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <title>ZEOS - PCCE</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%#= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
+
+</head>
+
+<style>
+    .login {
+        width: 25rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .img {
+        width: 5rem;
+    }
+</style>
+
+<body data-flash-messages="<%= JSON.dump(flash.to_a) %>">
+
+    <div class='container'>
+
+        <div class='border login bg-light'>
+            <div class=' bg-success'>
+
+                <div class='row align-items-center text-center'>
+                    <div class='col-3 mx-3'>
+                        <%= image_tag('logo.png', class: 'img') %>
+                    </div>
+                    <div class='col border-start border-2 text-white'>
+                        <h2>SISTEMA ZEOS</h2>
+                        <h5>POLICIA CIVIL CEARÁ</h5>
+                    </div>
+                </div>
+            </div>
+            <div class='p-3 '>
+                <%= yield %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

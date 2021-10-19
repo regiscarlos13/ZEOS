@@ -1,0 +1,15 @@
+<%= simple_form_for(@vincular, defaults: { input_html: { class: 'form-control-sm' }, label_html: { class: 'col-form-label col-form-label-sm' } }) do |f| %>
+<div class='row'>
+    <div class=col>
+        <%= f.input :saida, as: :string, input_html: {type: 'date'}  %>
+    </div>
+    <div class=col>
+        <%= f.input :tiposaida, collection: @tipoentradas %>
+    </div>
+
+</div>
+<hr>
+<div class=' p-2'>
+    <%= btn_save %> | <%= btn_cancel(vincular_servidor_path(@vincular.department.id)) %>
+</div>
+<% end %>

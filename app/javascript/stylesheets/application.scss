@@ -1,0 +1,29 @@
+@import "toastify-js/src/toastify";
+@import "~bootstrap/scss/bootstrap";
+@import './button.scss';
+body {
+    background-color: var(--color-white-bis);
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-gray-darker);
+}
+
+ :root {
+    --color-gray-darker: #262626;
+    --color-white-bis: #f3f5f6;
+    //--color-white-bis: #28166f;	
+}
+
+.container {
+    margin-top: 3rem;
+}
+
+.btns {
+    margin-top: 4rem;
+}
+
+legend {
+    float: none;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0rem;
+}

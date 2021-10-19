@@ -1,0 +1,8 @@
+<% @card_title = "Registro de " + @department.model_name.human(count: 1) %>
+
+<h2> <%= @department.name %> - <%= @department.sigla %> - <%= @department.tipo %></h2>
+
+
+
+<%= btn_edit(edit_department_path(@department)) %> | 
+<%= btn_back(departments_path) %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ZEOS - PCCE</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag '/favicon.ico' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+</head>
+
+<body data-flash-messages="<%= JSON.dump(flash.to_a) %>" data-controller='timeup'>
+
+    <%= render partial: 'layouts/shared/navbar' %>
+
+
+    <div class="container">
+        <div class="d-flex justify-content-end btns ">
+            <div class="p-2 bd-highlight"><%= @btn_print %></div>
+            <div class="p-2 bd-highlight"><%= @btn_new %></div>
+        </div>
+        <div class="card ">
+            <div class="card-header bg-success text-white">
+                <div class="row">
+                    <div class="col">
+                        <b><%= @card_title %></b>
+                    </div>
+                    <div class="col d-print-none text-end">
+                        Expira em: <span data-timeup-target='hora'> 30:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <%= yield %>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

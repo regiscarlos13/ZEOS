@@ -1,0 +1,40 @@
+<%= simple_form_for(@server, defaults: { input_html: { class: 'form-control-sm' }, label_html: { class: 'col-form-label col-form-label-sm' } }) do |f| %>
+
+<div class='row border border-success p-3 m-2' data-controller='server'>
+
+    <div class='row'>
+        <div class='col-lg-2'>
+            <%= f.input :matricula, maxlength: 11, input_html:  {data: {target: 'server.matricula'} } %>
+        </div>
+        <div class='col-lg-4'>
+            <%= f.input :name %>
+        </div>
+        <div class='col-lg-3' data-controller='cpf'>
+            <%= f.input :cpf, input_html: {data: { target: 'cpf.cpf', action: 'change->cpf#valida_cpf' } } %>
+        </div>
+        <div class='col-lg-3'>
+            <%= f.input :cargo, collection: @cargos, prompt: false, input_html: {data: {controller: 'select2'} } %>
+        </div>
+
+        <div class='col-lg-6'>
+            <%= f.input :email %>
+        </div>
+
+        <div class='col-lg-3'>
+            <%= f.input :posse, as: :string , input_html: {type: 'date'} %>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<div class=' p-2'>
+    <%= btn_save %> | <%= btn_cancel(servers_path) %>
+</div>
+
+
+<% end %>

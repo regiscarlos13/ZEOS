@@ -1,0 +1,16 @@
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastros</a>
+        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+            <%= link_to  "Delegacias", departments_path, class: 'dropdown-item' %>
+            <%= link_to  "Servidores", servers_path, class: 'dropdown-item' %>
+            <%= link_to  "Vincular Servidor", vinculars_index_path, class: 'dropdown-item' %>
+            <%= link_to  "Cidades", cidades_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to  "Viatúras", tests_path, class: 'dropdown-item disabled' %>
+            <%= link_to  "Armas/Coletes", tests_path, class: 'dropdown-item disabled' %>
+            <%= link_to  "Patromônio", tests_path, class: 'dropdown-item disabled' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to  "Criar Acesso", tests_path, class: 'dropdown-item disabled' %>
+        </ul>
+    </li>
